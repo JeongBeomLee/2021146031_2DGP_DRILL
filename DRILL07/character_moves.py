@@ -1,18 +1,18 @@
 from pico2d import *
-
 open_canvas()
-
 grass = load_image('grass.png')
-character = load_image('character.png')
+character = load_image('CupheadIdle.png')
+
+frame = 0
 
 # 여기를 채우세요.
-x=0
-for x in range(0,800+1,2):
+# 첫 번째 애니메이션
+for a in range(0, 200+1, 1):
     clear_canvas()
-    grass.draw(400, 30)
-    character.draw(x, 90)
+    character.clip_draw(frame * 134, 0, 134, 209, 400, 300, 134, 209)
     update_canvas()
-    delay(0.001)
+    frame = (frame + 1) % 10
+    delay(0.01)
     get_events()
 
 close_canvas()
