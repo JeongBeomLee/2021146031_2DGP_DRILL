@@ -16,4 +16,3 @@ for a in range(0, 200+1, 1):
     get_events()
 
 close_canvas()
-

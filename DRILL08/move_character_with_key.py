@@ -34,7 +34,6 @@ def events():
     pass
 
 open_canvas()
-grass = load_image('grass.png')
 character = load_image('animation_sheet.png')
 TUK_GROUND = load_image('TUK_GROUND.png')
 
@@ -53,7 +52,6 @@ direction = RIGHT
 
 while running:
     clear_canvas()
-    #grass.draw(400, 30)
     TUK_GROUND.clip_draw(0, 0, TUK_GROUND.w, TUK_GROUND.h, 400, 300 , get_canvas_width(), get_canvas_height())
 
     if(LR == 1): # 오른쪽 이동

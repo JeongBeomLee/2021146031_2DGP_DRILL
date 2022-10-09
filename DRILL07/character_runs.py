@@ -17,7 +17,6 @@ for a in range(0, 200+1, 5):
     get_events()
 
 
-
 # 두 번째 애니메이션
 for a in range(0, 200+1, 5):
     clear_canvas()
