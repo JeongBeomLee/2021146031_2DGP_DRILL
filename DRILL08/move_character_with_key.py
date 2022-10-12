@@ -4,6 +4,7 @@ def events():
     global running
     global LR, UD
     global direction
+
     events = get_events()
     for event in events:
         if event.type == SDL_QUIT: # 종료
@@ -30,7 +31,6 @@ def events():
                 UD -= 1
             elif event.key == SDLK_DOWN:
                 UD += 1
-
     pass
 
 open_canvas()
