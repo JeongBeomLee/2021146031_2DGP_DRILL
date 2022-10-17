@@ -1,4 +1,5 @@
 from pico2d import *
+import math
 
 def events():
     global running
@@ -49,15 +50,20 @@ UD = 0
 RIGHT = 0
 LEFT = 1
 direction = RIGHT
+degree = 0
 
 while running:
     clear_canvas()
     TUK_GROUND.clip_draw(0, 0, TUK_GROUND.w, TUK_GROUND.h, 400, 300 , get_canvas_width(), get_canvas_height())
 
     if(LR == 1): # 오른쪽 이동
-        character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        #character.clip_draw(frame * 100, 100, 100, 100, x, y)
+        character.clip_composite_draw(frame * 100, 100, 100, 100, math.radians(degree), 'n', x, y, 100, 100)
+        degree += 1
     elif(LR == -1): # 왼쪽 이동
-        character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        #character.clip_draw(frame * 100, 0, 100, 100, x, y)
+        character.clip_composite_draw(frame * 100, 100, 100, 100, math.radians(degree), 'h', x, y, 100, 100)
+        degree += 1
     elif(UD == 1): # 위로 이동
         if(direction == LEFT):
             character.clip_draw(frame * 100, 200, 100, 100, x, y)
