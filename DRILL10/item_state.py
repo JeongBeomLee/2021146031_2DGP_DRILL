@@ -50,7 +50,7 @@ def handle_events():
                 case pico2d.SDLK_j:
                     if count == 1:
                         game_framework.pop_state()
-                        pass
+                        break
                     count -= 1
                     play_state.initTeam(count)
                     game_framework.pop_state()
